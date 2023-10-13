@@ -4,15 +4,22 @@ import Flower from "./shapes/Flower";
 import Heart from "./shapes/Heart";
 import Lettering from "./shapes/Lettering";
 
-const BallonDetail = ({ color }) => (
-  <>
-    <div
-      style={{ background: `${COLORS[color]}` }}
-      className={`absolute bottom-[-10px] left-[45%] w-[10px] h-[10px] rounded-b-full border border-black`}
-    />
-    <div className="absolute bottom-[-110px] left-[49%] w-[1.5px] h-[100px] bg-black" />
-  </>
-);
+const BallonDetail = ({ color }) => {
+  let seletedColor = "";
+  if (color === "white") seletedColor = "#FDFEFE";
+  if (color === "brown") seletedColor = "#F37613";
+  else seletedColor = COLORS[color];
+
+  return (
+    <>
+      <div
+        style={{ background: seletedColor }}
+        className={`absolute bottom-[-10px] left-[45%] w-[10px] h-[10px] rounded-b-full border border-black`}
+      />
+      <div className="absolute bottom-[-110px] left-[49%] w-[1.5px] h-[100px] bg-black" />
+    </>
+  );
+};
 
 const Balloon = ({ color, shape, position, onClick }) => {
   const gradientStyle = `radial-gradient(#d9d9d9 0.1px, ${COLORS[color]}, ${COLORS[color]},  ${COLORS[color]})`;
@@ -21,26 +28,26 @@ const Balloon = ({ color, shape, position, onClick }) => {
     switch (shape) {
       case "flower":
         return (
-          <Flower>
-            <BallonDetail color={color} />
+          <Flower position={position} onClick={onClick}>
+            <BallonDetail color={"white"} />
           </Flower>
         );
       case "bear":
         return (
-          <Bear>
-            <BallonDetail color={color} />
+          <Bear position={position} onClick={onClick}>
+            <BallonDetail color={"brown"} />
           </Bear>
         );
       case "heart":
         return (
-          <Heart>
-            <BallonDetail color={color} />
+          <Heart position={position} onClick={onClick}>
+            <BallonDetail color={"red"} />
           </Heart>
         );
       case "lettering":
         return (
-          <Lettering>
-            <BallonDetail color={color} />
+          <Lettering position={position} onClick={onClick}>
+            <BallonDetail color={"pink"} />
           </Lettering>
         );
       default:
