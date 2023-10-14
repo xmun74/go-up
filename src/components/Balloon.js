@@ -39,26 +39,26 @@ const Balloon = ({ color, shape, position, onClick }) => {
             <BallonDetail color={"red"} />
           </Heart>
         );
-      case "lettering":
-        return (
-          <Circle position={position} onClick={onClick}>
-            <BallonDetail color={"pink"} />
-          </Circle>
-        );
       default:
         return (
-          <div
-            style={{
-              background: gradientStyle,
-              top: `${position.y}px`,
-              left: `${position.x}px`,
-            }}
-            className={`relative w-24 h-28 rounded-full border border-black`}
-            onClick={onClick}
-          >
+          <Circle position={position} onClick={onClick} color={color}>
             <BallonDetail color={color} />
-          </div>
+          </Circle>
         );
+      // default:
+      //   return (
+      //     <div
+      //       style={{
+      //         background: gradientStyle,
+      //         top: `${position.y}px`,
+      //         left: `${position.x}px`,
+      //       }}
+      //       className={`relative w-24 h-28 rounded-full border border-black`}
+      //       onClick={onClick}
+      //     >
+      //       <BallonDetail color={color} />
+      //     </div>
+      //   );
     }
   };
 
