@@ -24,7 +24,7 @@ const Heart = ({ position, onClick, children }) => {
     ctx.fill();
 
     ctx.lineWidth = "1";
-    ctx.strokeStyle = "#000000";
+    ctx.strokeStyle = "black";
     ctx.stroke();
   }, []);
   return (

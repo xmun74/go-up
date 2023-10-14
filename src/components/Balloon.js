@@ -6,7 +6,6 @@ import Lettering from "./shapes/Lettering";
 
 const BallonDetail = ({ color }) => {
   let seletedColor = "";
-  if (color === "white") seletedColor = "#FDFEFE";
   if (color === "brown") seletedColor = "#F37613";
   else seletedColor = COLORS[color];
 
@@ -27,11 +26,7 @@ const Balloon = ({ color, shape, position, onClick }) => {
   const renderShape = (shape) => {
     switch (shape) {
       case "flower":
-        return (
-          <Flower position={position} onClick={onClick}>
-            <BallonDetail color={"white"} />
-          </Flower>
-        );
+        return <Flower position={position} onClick={onClick} />;
       case "bear":
         return (
           <Bear position={position} onClick={onClick}>
