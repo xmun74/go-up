@@ -1,6 +1,9 @@
+import { CANVAS_SIZE } from "../../constants";
 import useCanvas from "../../hooks/useCanvas";
 
 const Bear = ({ position, onClick, children }) => {
+  const { width, height } = CANVAS_SIZE["bear"];
+
   const drawCanvas = (ctx) => {
     //테두리
     ctx.beginPath();
@@ -69,7 +72,7 @@ const Bear = ({ position, onClick, children }) => {
     ctx.fill();
   };
 
-  const canvasRef = useCanvas(80, 80, drawCanvas);
+  const canvasRef = useCanvas(width, height, drawCanvas);
 
   return (
     <div

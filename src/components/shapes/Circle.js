@@ -1,7 +1,9 @@
 import useCanvas from "../../hooks/useCanvas";
-import { COLORS } from "../../constants";
+import { CANVAS_SIZE, COLORS } from "../../constants";
 
 const Circle = ({ position, onClick, color, children }) => {
+  const { width, height } = CANVAS_SIZE["circle"];
+
   const drawCanvas = (ctx) => {
     var grd = ctx.createLinearGradient(20, 10, 50, 50);
     grd.addColorStop(0, "white");
@@ -19,7 +21,7 @@ const Circle = ({ position, onClick, color, children }) => {
     ctx.stroke();
   };
 
-  const canvasRef = useCanvas(100, 140, drawCanvas);
+  const canvasRef = useCanvas(width, height, drawCanvas);
 
   return (
     <div

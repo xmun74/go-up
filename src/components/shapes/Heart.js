@@ -1,14 +1,17 @@
 import { useEffect, useRef } from "react";
+import { CANVAS_SIZE } from "../../constants";
 
 const Heart = ({ position, onClick, children }) => {
+  const { width, height } = CANVAS_SIZE["heart"];
+
   const canvasRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext("2d");
 
-    canvas.width = 120;
-    canvas.height = 100;
+    canvas.width = width;
+    canvas.height = height;
 
     ctx.translate(-19, -19);
     ctx.beginPath();
@@ -26,7 +29,7 @@ const Heart = ({ position, onClick, children }) => {
     ctx.lineWidth = "1";
     ctx.strokeStyle = "black";
     ctx.stroke();
-  }, []);
+  }, [height, width]);
   return (
     <div
       style={{

@@ -7,3 +7,22 @@ export const COLORS = {
 };
 
 export const SHAPES = ["circle", "flower", "bear", "heart"];
+
+export const CANVAS_SIZE = {
+  circle: {
+    width: 100,
+    height: 140,
+  },
+  flower: {
+    width: 135,
+    height: 135,
+  },
+  bear: {
+    width: 80,
+    height: 80,
+  },
+  heart: {
+    width: 120,
+    height: 100,
+  },
+};

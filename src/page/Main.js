@@ -2,6 +2,7 @@ import { useState } from "react";
 import Balloon from "../components/Balloon";
 import House from "../components/House";
 import { COLORS, SHAPES } from "../constants";
+import PointLine from "../components/PointLine";
 
 /** 색, 모양 랜덤 */
 const getRandomIndex = (arr) => {
@@ -54,7 +55,7 @@ const Main = () => {
           />
         ))}
       </section>
-
+      <PointLine cnt={balloonCnt} />
       <House onClick={handleAddBalloon} />
     </main>
   );

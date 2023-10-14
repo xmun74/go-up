@@ -1,14 +1,17 @@
 import { useEffect, useRef } from "react";
+import { CANVAS_SIZE } from "../../constants";
 
 const Flower = ({ position, onClick }) => {
+  const { width, height } = CANVAS_SIZE["flower"];
+
   const canvasRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext("2d");
 
-    canvas.width = 135;
-    canvas.height = 135;
+    canvas.width = width;
+    canvas.height = height;
     ctx.translate(-8, -10);
 
     let petalRadius = 20;
@@ -71,7 +74,7 @@ const Flower = ({ position, onClick }) => {
     ctx.beginPath();
     ctx.ellipse(81, 68, 2, 6, 0, 0, Math.PI * 2);
     ctx.fill();
-  }, []);
+  }, [height, width]);
   return (
     <div
       style={{
@@ -82,7 +85,6 @@ const Flower = ({ position, onClick }) => {
       onClick={onClick}
     >
       <canvas ref={canvasRef} />
-      <div className="absolute bottom-[-98px] left-[50%] w-[1px] h-[100px] bg-black" />
     </div>
   );
 };
