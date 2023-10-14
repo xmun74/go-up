@@ -9,7 +9,7 @@ const BalloonDetail = ({ color }) => {
     <>
       <div
         style={{ background: color === "brown" ? "#F37613" : COLORS[color] }}
-        className={`absolute bottom-[-10px] left-[45%] w-[10px] h-[10px] rounded-b-full border border-black`}
+        className={`absolute bottom-[-8px] left-[45%] w-[10px] h-[10px] rounded-b-full border border-black`}
       />
     </>
   );

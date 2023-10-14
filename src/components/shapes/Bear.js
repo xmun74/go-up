@@ -80,7 +80,7 @@ const Bear = ({ position, onClick, children }) => {
         top: `${position.y}px`,
         left: `${position.x}px`,
       }}
-      className={`relative w-20 h-20 border border-black`}
+      className={`relative w-20 h-20`}
       onClick={onClick}
     >
       <canvas ref={canvasRef} />

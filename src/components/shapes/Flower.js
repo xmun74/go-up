@@ -81,7 +81,7 @@ const Flower = ({ position, onClick }) => {
         top: `${position.y}px`,
         left: `${position.x}px`,
       }}
-      className={`relative w-[135px] h-[130px] border border-black`}
+      className={`relative w-[135px] h-[130px]`}
       onClick={onClick}
     >
       <canvas ref={canvasRef} />

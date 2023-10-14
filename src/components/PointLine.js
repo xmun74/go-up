@@ -2,7 +2,13 @@ import { CANVAS_SIZE } from "../constants";
 import useCanvas from "../hooks/useCanvas";
 
 const PointLine = ({ cnt }) => {
+  //   let radian;
+  //   const VELOCITY = 0.005;
+  //   radian += VELOCITY;
+
   const animate = (ctx) => {
+    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
     if (cnt) {
       ctx.strokeStyle = "black";
       ctx.lineWidth = 1.3;

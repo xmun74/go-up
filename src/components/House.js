@@ -10,6 +10,7 @@ const House = ({ onClick }) => {
     ctx.lineTo(0, 250);
     ctx.closePath();
     ctx.fillStyle = darkgray;
+    ctx.strokeStyle = "black";
     ctx.lineWidth = "4";
     ctx.stroke();
     ctx.fill();
