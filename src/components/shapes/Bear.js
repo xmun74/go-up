@@ -1,13 +1,7 @@
-import { useEffect } from "react";
 import useCanvas from "../../hooks/useCanvas";
 
 const Bear = ({ position, onClick, children }) => {
-  const canvasRef = useCanvas(80, 80);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    const ctx = canvas?.getContext("2d");
-
+  const drawCanvas = (ctx) => {
     //테두리
     ctx.beginPath();
     ctx.ellipse(40, 48, 35, 30, 0, 0, Math.PI * 2);
@@ -73,7 +67,9 @@ const Bear = ({ position, onClick, children }) => {
     ctx.lineTo(40, 51);
     ctx.arc(40, 58, 3, 0, Math.PI, false);
     ctx.fill();
-  }, []);
+  };
+
+  const canvasRef = useCanvas(80, 80, drawCanvas);
 
   return (
     <div

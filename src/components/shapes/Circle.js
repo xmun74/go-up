@@ -1,14 +1,8 @@
-import { useEffect } from "react";
 import useCanvas from "../../hooks/useCanvas";
 import { COLORS } from "../../constants";
 
 const Circle = ({ position, onClick, color, children }) => {
-  const canvasRef = useCanvas(100, 140);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext("2d");
-
+  const drawCanvas = (ctx) => {
     var grd = ctx.createLinearGradient(20, 10, 50, 50);
     grd.addColorStop(0, "white");
     grd.addColorStop(1, COLORS[color]);
@@ -23,7 +17,9 @@ const Circle = ({ position, onClick, color, children }) => {
     ctx.lineWidth = "1.2";
     ctx.strokeStyle = "black";
     ctx.stroke();
-  }, []);
+  };
+
+  const canvasRef = useCanvas(100, 140, drawCanvas);
 
   return (
     <div

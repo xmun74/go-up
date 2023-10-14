@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const useCanvas = (canvasWidth, canvasHeight) => {
+const useCanvas = (canvasWidth, canvasHeight, animate) => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -21,7 +21,11 @@ const useCanvas = (canvasWidth, canvasHeight) => {
       }
     };
     setCanvasScale();
-  }, [canvasWidth, canvasHeight]);
+
+    if (ctx && animate) {
+      animate(ctx);
+    }
+  }, [canvasWidth, canvasHeight, animate]);
   return canvasRef;
 };
 export default useCanvas;
