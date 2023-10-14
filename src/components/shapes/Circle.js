@@ -1,4 +1,4 @@
-const Lettering = ({ position, onClick, children }) => {
+const Circle = ({ position, onClick, children }) => {
   return (
     <div
       style={{
@@ -12,4 +12,4 @@ const Lettering = ({ position, onClick, children }) => {
     </div>
   );
 };
-export default Lettering;
+export default Circle;

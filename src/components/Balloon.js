@@ -2,7 +2,7 @@ import { COLORS } from "../constants";
 import Bear from "./shapes/Bear";
 import Flower from "./shapes/Flower";
 import Heart from "./shapes/Heart";
-import Lettering from "./shapes/Lettering";
+import Circle from "./shapes/Circle";
 
 const BallonDetail = ({ color }) => {
   let seletedColor = "";
@@ -41,9 +41,9 @@ const Balloon = ({ color, shape, position, onClick }) => {
         );
       case "lettering":
         return (
-          <Lettering position={position} onClick={onClick}>
+          <Circle position={position} onClick={onClick}>
             <BallonDetail color={"pink"} />
-          </Lettering>
+          </Circle>
         );
       default:
         return (

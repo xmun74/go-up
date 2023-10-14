@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const Flower = ({ position, onClick, children }) => {
+const Flower = ({ position, onClick }) => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -8,7 +8,7 @@ const Flower = ({ position, onClick, children }) => {
     const ctx = canvas?.getContext("2d");
 
     canvas.width = 135;
-    canvas.height = 130;
+    canvas.height = 135;
     ctx.translate(-8, -10);
 
     let petalRadius = 20;
@@ -51,7 +51,11 @@ const Flower = ({ position, onClick, children }) => {
     // 얼굴 원
     ctx.beginPath();
     ctx.arc(75, 75, 28, 0, Math.PI * 2, true);
-    ctx.fillStyle = "#FBD109";
+    var grd = ctx.createLinearGradient(50, 55, 80, 80);
+    grd.addColorStop(0, "white");
+    grd.addColorStop(1, "#FBD109");
+    ctx.fillStyle = grd;
+    // ctx.fillStyle = "#FBD109";
     ctx.fill();
     ctx.stroke();
     // 입 (시계 방향)
