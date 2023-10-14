@@ -21,8 +21,6 @@ const BallonDetail = ({ color }) => {
 };
 
 const Balloon = ({ color, shape, position, onClick }) => {
-  const gradientStyle = `radial-gradient(#d9d9d9 0.1px, ${COLORS[color]}, ${COLORS[color]},  ${COLORS[color]})`;
-
   const renderShape = (shape) => {
     switch (shape) {
       case "flower":
@@ -45,20 +43,6 @@ const Balloon = ({ color, shape, position, onClick }) => {
             <BallonDetail color={color} />
           </Circle>
         );
-      // default:
-      //   return (
-      //     <div
-      //       style={{
-      //         background: gradientStyle,
-      //         top: `${position.y}px`,
-      //         left: `${position.x}px`,
-      //       }}
-      //       className={`relative w-24 h-28 rounded-full border border-black`}
-      //       onClick={onClick}
-      //     >
-      //       <BallonDetail color={color} />
-      //     </div>
-      //   );
     }
   };
 

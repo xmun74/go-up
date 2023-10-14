@@ -55,7 +55,6 @@ const Flower = ({ position, onClick }) => {
     grd.addColorStop(0, "white");
     grd.addColorStop(1, "#FBD109");
     ctx.fillStyle = grd;
-    // ctx.fillStyle = "#FBD109";
     ctx.fill();
     ctx.stroke();
     // 입 (시계 방향)
