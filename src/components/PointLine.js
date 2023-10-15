@@ -2,10 +2,6 @@ import { CANVAS_SIZE } from "../constants";
 import useCanvas from "../hooks/useCanvas";
 
 const PointLine = ({ cnt }) => {
-  //   let radian;
-  //   const VELOCITY = 0.005;
-  //   radian += VELOCITY;
-
   const animate = (ctx) => {
     ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
 
@@ -14,7 +10,7 @@ const PointLine = ({ cnt }) => {
       ctx.lineWidth = 1.3;
 
       const pointCenterX = window.innerWidth / 2;
-      const pointCenterY = window.innerHeight * 0.7;
+      const pointCenterY = window.innerHeight * 0.75;
 
       for (let i = 0; i < cnt.length; i++) {
         let canvasWidth = CANVAS_SIZE[cnt[i].shape].width / 2;
@@ -26,12 +22,13 @@ const PointLine = ({ cnt }) => {
           canvasHeight = 128;
         }
 
-        ctx.moveTo(
-          cnt[i].position?.x + canvasWidth,
-          cnt[i].position?.y + canvasHeight
-        );
+        let x = cnt[i].position?.x + canvasWidth;
+        let y = cnt[i].position?.y + canvasHeight;
+        ctx.beginPath();
+        ctx.moveTo(x, y);
         ctx.lineTo(pointCenterX, pointCenterY);
         ctx.stroke();
+        ctx.closePath();
       }
     }
   };

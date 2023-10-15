@@ -29,7 +29,7 @@ const Circle = ({ position, onClick, color, children }) => {
         top: `${position.y}px`,
         left: `${position.x}px`,
       }}
-      className={`relative w-24 h-28`}
+      className={`relative w-24 h-28 `}
       onClick={onClick}
     >
       <canvas ref={canvasRef} />

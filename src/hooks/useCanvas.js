@@ -22,18 +22,9 @@ const useCanvas = (canvasWidth, canvasHeight, animate) => {
     };
     setCanvasScale();
 
-    let requestId;
-    const requestAnimation = () => {
-      requestId = window.requestAnimationFrame(requestAnimation);
-      if (ctx && animate) {
-        animate(ctx);
-      }
-    };
-    requestAnimation();
-
-    return () => {
-      window.cancelAnimationFrame(requestId);
-    };
+    if (ctx && animate) {
+      animate(ctx);
+    }
   }, [canvasWidth, canvasHeight, animate]);
   return canvasRef;
 };
