@@ -142,9 +142,11 @@ const House = ({ onClick }) => {
 
   return (
     <div
-      className={`absolute bottom-0 left-1/3 flex justify-center items-center bg-inherit`}
+      className={`absolute bottom-0 left-1/2 flex justify-center items-center bg-inherit`}
     >
-      <canvas ref={canvasRef} onClick={onClick} />
+      <div className={`absolute bottom-0 -left-30`}>
+        <canvas ref={canvasRef} onClick={onClick} />
+      </div>
     </div>
   );
 };
